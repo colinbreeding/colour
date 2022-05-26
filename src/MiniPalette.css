@@ -1,0 +1,32 @@
+.mini-container {
+    background-color: white;
+    border-radius: 5px;
+    padding: .5rem;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid black;
+}
+
+.mini-container:hover {
+    cursor: pointer;
+}
+
+.mini-colors {
+    background-color: grey;
+}
+
+.mini-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    color: black;
+    padding-top: .5rem;
+    font-size: 1rem;
+    position: relative;
+}
+
+.mini-emoji {
+    margin-left: .5rem;
+    font-size: 1.5rem;
+}
