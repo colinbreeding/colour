@@ -12,7 +12,11 @@
 }
 
 .mini-colors {
-    background-color: grey;
+    background-color: #dae1e4;
+    height: 150px;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .mini-title {
@@ -29,4 +33,13 @@
 .mini-emoji {
     margin-left: .5rem;
     font-size: 1.5rem;
+}
+
+.mini-color {
+    height: 25%;
+    width: 20%;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: -4px;
 }
