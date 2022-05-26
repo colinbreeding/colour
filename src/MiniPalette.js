@@ -6,7 +6,7 @@ function MiniPalette(props) {
     const miniColorBoxes = colors.map(color =>
         <div className='mini-color' style={{ backgroundColor: color.color }} key={color.name} />)
     return (
-        <div className='mini-container'>
+        <div className='mini-container' onClick={props.handleClick} >
             <div className='mini-colors'>
                 {miniColorBoxes}
             </div>
