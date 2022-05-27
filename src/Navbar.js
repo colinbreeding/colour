@@ -35,7 +35,12 @@ class Navbar extends Component {
                     <div className="slider-container">
                         <span>Level: {level}</span>
                         <div className="slider">
-                            <Slider defaultValue={level} min={100} max={900} onAfterChange={changeLevel} step={100} />
+                            <Slider
+                                defaultValue={level}
+                                min={100}
+                                max={900}
+                                onAfterChange={changeLevel}
+                                step={100} />
                         </div>
                     </div>
                 }
@@ -56,7 +61,11 @@ class Navbar extends Component {
                     }}
                     onClose={this.closeSnackbar}
                     action={[
-                        <IconButton onClick={this.closeSnackbar} color="inherit" key="close" aria-label="close" >
+                        <IconButton
+                            onClick={this.closeSnackbar}
+                            color="inherit"
+                            key="close"
+                            aria-label="close" >
                             <CloseIcon />
                         </IconButton>
                     ]}
