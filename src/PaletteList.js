@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-import './PaletteList.css';
+import './styles/PaletteList.css';
 import MiniPalette from "./MiniPalette";
 
 class PaletteList extends Component {
