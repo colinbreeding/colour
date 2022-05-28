@@ -3,11 +3,12 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import "./styles/DraggableColorBox.css";
 
 export default function DraggableColorBox(props) {
+  const { handleClick, name, color } = props;
   return (
-    <div className="draggableColorBox" style={{ backgroundColor: props.color }}>
+    <div className="draggableColorBox" style={{ backgroundColor: color }}>
       <div className="boxContent">
-        <span>{props.name}</span>
-        <DeleteIcon className="deleteIcon" />
+        <span>{name}</span>
+        <DeleteIcon className="deleteIcon" onClick={handleClick} />
       </div>
     </div>
   );
