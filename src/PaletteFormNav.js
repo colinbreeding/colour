@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/PaletteFormNav.css";
 import { styled, useTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
@@ -19,6 +20,9 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+  flexDirection: "row",
+  justifyContent: "space-between",
+  height: "64px",
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: `${drawerWidth}px`,
@@ -46,7 +50,7 @@ function PaletteFormNav(props) {
   };
 
   return (
-    <div>
+    <div className="root">
       <CssBaseline />
       <AppBar position="fixed" open={open} color="default">
         <Toolbar>
@@ -60,8 +64,10 @@ function PaletteFormNav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Persistent drawer
+            Create A Palette
           </Typography>
+        </Toolbar>
+        <div className="navBtns">
           <ValidatorForm onSubmit={() => props.handleSubmit(paletteName)}>
             <TextValidator
               label="Palette Name"
@@ -71,16 +77,16 @@ function PaletteFormNav(props) {
               validators={["required", "isPaletteNameUnique"]}
               errorMessages={["Enter Palette Name", "Name already used"]}
             />
-            <Link to="/">
-              <Button variant="contained" color="secondary">
-                Go Back
-              </Button>
-            </Link>
             <Button variant="contained" color="primary" type="submit">
               Save Palette
             </Button>
           </ValidatorForm>
-        </Toolbar>
+          <Link to="/">
+            <Button variant="contained" color="secondary">
+              Go Back
+            </Button>
+          </Link>
+        </div>
       </AppBar>
     </div>
   );
