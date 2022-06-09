@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/NewPaletteForm.css";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
 import { styled, useTheme } from "@mui/material/styles";
@@ -93,6 +94,8 @@ function NewPaletteForm(props) {
       <Drawer
         sx={{
           width: drawerWidth,
+          display: "flex",
+          alignItems: "center",
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
@@ -109,27 +112,37 @@ function NewPaletteForm(props) {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <Typography variant="h4">Design Your Palette</Typography>
-        <div>
-          <Button variant="contained" color="secondary" onClick={clearColors}>
-            Clear Palette
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={addRandomColor}
-            disabled={paletteFull}
-          >
-            Random Color
-          </Button>
+        <div className="container">
+          <Typography variant="h4" gutterBottom>
+            Design Your Palette
+          </Typography>
+          <div className="buttons">
+            <Button
+              variant="contained"
+              color="secondary"
+              onClick={clearColors}
+              className="button"
+            >
+              Clear Palette
+            </Button>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={addRandomColor}
+              disabled={paletteFull}
+              className="button"
+            >
+              Random Color
+            </Button>
+          </div>
+          <ColorPickerForm
+            paletteFull={paletteFull}
+            addNewColor={addNewColor}
+            colorName={colorName}
+            setColorName={setColorName}
+            colors={colors}
+          />
         </div>
-        <ColorPickerForm
-          paletteFull={paletteFull}
-          addNewColor={addNewColor}
-          colorName={colorName}
-          setColorName={setColorName}
-          colors={colors}
-        />
       </Drawer>
       <Main open={open}>
         <DrawerHeader />

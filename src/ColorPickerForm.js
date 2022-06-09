@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { ChromePicker } from "react-color";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+import "./styles/ColorPickerForm.css";
 
 function ColorPickerForm(props) {
   const [curColor, setColor] = React.useState("teal");
@@ -34,10 +35,19 @@ function ColorPickerForm(props) {
 
   return (
     <div>
-      <ChromePicker color={curColor} onChangeComplete={updateCurrentColor} />
+      <ChromePicker
+        color={curColor}
+        onChangeComplete={updateCurrentColor}
+        className="picker"
+      />
       <ValidatorForm onSubmit={handleSubmit}>
         <TextValidator
           value={colorName}
+          name="newColorName"
+          className="colorNameInput"
+          placeholder="Color Name"
+          variant="filled"
+          margin="normal"
           onChange={handleColorChange}
           validators={["required", "isColorNameUnique", "isColorUnique"]}
           errorMessages={[
@@ -50,6 +60,7 @@ function ColorPickerForm(props) {
           variant="contained"
           color="primary"
           type="submit"
+          className="addColor"
           disabled={paletteFull}
           style={{ backgroundColor: paletteFull ? "grey" : curColor }}
         >
