@@ -9,7 +9,6 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
-import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 400;
@@ -23,6 +22,7 @@ const AppBar = styled(MuiAppBar, {
   }),
   flexDirection: "row",
   justifyContent: "space-between",
+  alignItems: "center",
   height: "64px",
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -38,9 +38,10 @@ function PaletteFormNav(props) {
   const theme = useTheme();
   const { open, palettes, handleSubmit } = props;
   const [paletteName, setPaletteName] = React.useState("");
+  const [formShowing, setFormShowing] = React.useState("false");
 
-  const handlePaletteChange = (evt) => {
-    setPaletteName(evt.target.value);
+  const showForm = () => {
+    setFormShowing("true");
   };
 
   return (
@@ -62,14 +63,29 @@ function PaletteFormNav(props) {
           </Typography>
         </Toolbar>
         <div className="navBtns">
-          <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
-          <Link to="/">
-            <Button variant="contained" color="secondary">
+          <Link to="/" className="link">
+            <Button variant="contained" color="secondary" className="navButton">
               Go Back
             </Button>
           </Link>
+          <Button
+            variant="contained"
+            color="primary"
+            className="navButton"
+            onClick={showForm}
+          >
+            Save
+          </Button>
         </div>
       </AppBar>
+      {formShowing && (
+        <PaletteMetaForm
+          palettes={palettes}
+          handleSubmit={handleSubmit}
+          paletteName={paletteName}
+          setPaletteName={setPaletteName}
+        />
+      )}
     </div>
   );
 }

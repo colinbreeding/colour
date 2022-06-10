@@ -46,7 +46,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 function NewPaletteForm(props) {
   const theme = useTheme();
   const { maxColors = 20, palettes } = props;
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(true);
   const [colors, setNewColor] = React.useState(props.palettes[0].colors);
   const [colorName, setColorName] = React.useState("");
   const paletteFull = colors.length >= maxColors;

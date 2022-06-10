@@ -1,3 +1,13 @@
 .root {
   display: flex;
 }
+.navBtns {
+  margin-right: 1rem;
+}
+.navButton {
+  margin: 0 0.5rem;
+}
+.link {
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
