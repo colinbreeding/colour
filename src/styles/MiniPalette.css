@@ -11,6 +11,9 @@
 .mini-container:hover {
   cursor: pointer;
 }
+.mini-container:hover svg {
+  opacity: 1;
+}
 
 .mini-colors {
   background-color: #dae1e4;
@@ -43,4 +46,16 @@
   margin: 0 auto;
   position: relative;
   margin-bottom: -4px;
+}
+.delete-icon {
+  color: white;
+  background-color: #eb3d30;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 10px;
+  z-index: 10;
+  opacity: 0;
 }
