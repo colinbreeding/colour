@@ -48,6 +48,7 @@ function NewPaletteForm(props) {
   const { maxColors = 20, palettes } = props;
   const [open, setOpen] = React.useState(true);
   const [colors, setNewColor] = React.useState(props.palettes[0].colors);
+  const [paletteName, setPaletteName] = React.useState("");
   const [colorName, setColorName] = React.useState("");
   const paletteFull = colors.length >= maxColors;
 
@@ -61,12 +62,9 @@ function NewPaletteForm(props) {
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-  const handleSubmit = (paletteName) => {
-    const newPalette = {
-      paletteName: paletteName,
-      id: paletteName.toLowerCase().replace(/ /g, "-"),
-      colors: colors,
-    };
+  const handleSubmit = (newPalette) => {
+    newPalette.id = paletteName.toLowerCase().replace(/ /g, "-");
+    newPalette.colors = colors;
     props.savePalette(newPalette);
     props.history.push("/");
   };
@@ -90,6 +88,8 @@ function NewPaletteForm(props) {
         palettes={palettes}
         handleSubmit={handleSubmit}
         handleDrawerOpen={handleDrawerOpen}
+        paletteName={paletteName}
+        setPaletteName={setPaletteName}
       />
       <Drawer
         sx={{

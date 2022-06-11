@@ -36,8 +36,8 @@ const AppBar = styled(MuiAppBar, {
 
 function PaletteFormNav(props) {
   const theme = useTheme();
-  const { open, palettes, handleSubmit } = props;
-  const [paletteName, setPaletteName] = React.useState("");
+  const { open, palettes, handleSubmit, paletteName, setPaletteName } = props;
+
   const [formShowing, setFormShowing] = React.useState(false);
 
   const showForm = () => {
