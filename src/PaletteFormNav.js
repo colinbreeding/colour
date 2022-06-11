@@ -38,12 +38,14 @@ function PaletteFormNav(props) {
   const theme = useTheme();
   const { open, palettes, handleSubmit } = props;
   const [paletteName, setPaletteName] = React.useState("");
-  const [formShowing, setFormShowing] = React.useState("false");
+  const [formShowing, setFormShowing] = React.useState(false);
 
   const showForm = () => {
-    setFormShowing("true");
+    setFormShowing(true);
   };
-
+  const hideForm = () => {
+    setFormShowing(false);
+  };
   return (
     <div className="root">
       <CssBaseline />
@@ -84,6 +86,7 @@ function PaletteFormNav(props) {
           handleSubmit={handleSubmit}
           paletteName={paletteName}
           setPaletteName={setPaletteName}
+          hideForm={hideForm}
         />
       )}
     </div>
