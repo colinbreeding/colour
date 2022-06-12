@@ -2,12 +2,21 @@
   display: flex;
 }
 .navBtns {
-  margin-right: 1rem;
-}
-.navButton {
-  margin: 0 0.5rem;
+  margin-right: 0.5rem;
 }
 .link {
   text-decoration: none;
-  margin: 0 0.5rem;
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 1199.98px) {
+}
+@media (max-width: 991.98px) {
+}
+@media (max-width: 757.98px) {
+  .link {
+    margin-right: 0;
+  }
+}
+@media (max-width: 575.98px) {
 }
