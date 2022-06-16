@@ -31,5 +31,28 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 30%);
-  gap: 5%;
+  gap: 3.5rem;
+}
+@media (max-width: 1599.98px) {
+  .PaletteList-container {
+    width: 80%;
+  }
+}
+@media (max-width: 1199.98px) {
+}
+@media (max-width: 991.98px) {
+  .PaletteList-palettes {
+    grid-template-columns: repeat(2, 50%);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 757.98px) {
+}
+@media (max-width: 575.98px) {
+  .PaletteList-palettes {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .PaletteList-container {
+    width: 75%;
+  }
 }
