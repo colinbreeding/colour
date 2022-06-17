@@ -9,7 +9,6 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-import { CssBaseline } from "@mui/material";
 
 const drawerWidth = 400;
 
