@@ -24,13 +24,7 @@ class Navbar extends Component {
     this.setState({ open: false });
   }
   render() {
-    const {
-      level,
-      changeLevel,
-      showingAllColors,
-      handleFormatChange,
-      closeSnackbar,
-    } = this.props;
+    const { level, changeLevel, showingAllColors } = this.props;
     const { format, open } = this.state;
     return (
       <header className="Navbar">
@@ -55,7 +49,7 @@ class Navbar extends Component {
           <Select
             className="select"
             value={format}
-            onChange={handleFormatChange}
+            onChange={this.handleFormatChange}
           >
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
             <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -74,10 +68,10 @@ class Navbar extends Component {
           ContentProps={{
             "aria-describedby": "message-id",
           }}
-          onClose={closeSnackbar}
+          onClose={this.closeSnackbar}
           action={[
             <IconButton
-              onClick={closeSnackbar}
+              onClick={this.closeSnackbar}
               color="inherit"
               key="close"
               aria-label="close"
