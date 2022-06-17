@@ -41,6 +41,16 @@
 .heading {
   font-size: 2rem;
 }
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-out;
+}
+
 @media (max-width: 1599.98px) {
   .PaletteList-container {
     width: 80%;
