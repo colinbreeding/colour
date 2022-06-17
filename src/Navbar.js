@@ -24,8 +24,14 @@ class Navbar extends Component {
     this.setState({ open: false });
   }
   render() {
-    const { level, changeLevel, showingAllColors } = this.props;
-    const { format } = this.state;
+    const {
+      level,
+      changeLevel,
+      showingAllColors,
+      handleFormatChange,
+      closeSnackbar,
+    } = this.props;
+    const { format, open } = this.state;
     return (
       <header className="Navbar">
         <div className="logo">
@@ -49,7 +55,7 @@ class Navbar extends Component {
           <Select
             className="select"
             value={format}
-            onChange={this.handleFormatChange}
+            onChange={handleFormatChange}
           >
             <MenuItem value="hex">HEX - #ffffff</MenuItem>
             <MenuItem value="rgb">RGB - rgb(255,255,255)</MenuItem>
@@ -58,7 +64,7 @@ class Navbar extends Component {
         </div>
         <Snackbar
           anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
-          open={this.state.open}
+          open={open}
           autoHideDuration={3000}
           message={
             <span id="message-id">
@@ -68,10 +74,10 @@ class Navbar extends Component {
           ContentProps={{
             "aria-describedby": "message-id",
           }}
-          onClose={this.closeSnackbar}
+          onClose={closeSnackbar}
           action={[
             <IconButton
-              onClick={this.closeSnackbar}
+              onClick={closeSnackbar}
               color="inherit"
               key="close"
               aria-label="close"

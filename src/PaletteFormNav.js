@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PaletteMetaForm from "./PaletteMetaForm";
 import "./styles/PaletteFormNav.css";
 import { styled, useTheme } from "@mui/material/styles";
@@ -35,8 +35,15 @@ const AppBar = styled(MuiAppBar, {
 
 function PaletteFormNav(props) {
   const theme = useTheme();
-  const { open, palettes, handleSubmit, paletteName, setPaletteName } = props;
-  const [formShowing, setFormShowing] = React.useState(false);
+  const {
+    open,
+    palettes,
+    handleSubmit,
+    paletteName,
+    setPaletteName,
+    handleDrawerOpen,
+  } = props;
+  const [formShowing, setFormShowing] = useState(false);
 
   const showForm = () => {
     setFormShowing(true);
@@ -51,7 +58,7 @@ function PaletteFormNav(props) {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={props.handleDrawerOpen}
+            onClick={handleDrawerOpen}
             edge="start"
             sx={{ mr: 2, ...(open && { display: "none" }) }}
           >

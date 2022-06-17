@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -10,8 +10,8 @@ import EmojiPicker from "./EmojiPicker";
 
 function PaletteMetaForm(props) {
   const { paletteName, setPaletteName, hideForm, handleSubmit } = props;
-  const [stage, setStage] = React.useState("form");
-  React.useEffect(() => {
+  const [stage, setStage] = useState("form");
+  useEffect(() => {
     ValidatorForm.addValidationRule("isPaletteNameUnique", (value) => {
       return props.palettes.every(
         ({ paletteName }) => paletteName.toLowerCase() !== value.toLowerCase()

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles/NewPaletteForm.css";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
@@ -46,10 +46,10 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 function NewPaletteForm(props) {
   const theme = useTheme();
   const { maxColors = 20, palettes } = props;
-  const [open, setOpen] = React.useState(true);
-  const [colors, setNewColor] = React.useState(props.palettes[0].colors);
-  const [paletteName, setPaletteName] = React.useState("");
-  const [colorName, setColorName] = React.useState("");
+  const [open, setOpen] = useState(true);
+  const [colors, setNewColor] = useState(props.palettes[0].colors);
+  const [paletteName, setPaletteName] = useState("");
+  const [colorName, setColorName] = useState("");
   const paletteFull = colors.length >= maxColors;
 
   const handleDrawerClose = () => {

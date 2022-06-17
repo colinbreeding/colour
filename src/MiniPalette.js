@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import "./styles/MiniPalette.css";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { render } from "@testing-library/react";
 
 class MiniPalette extends PureComponent {
   constructor(props) {
@@ -17,7 +16,7 @@ class MiniPalette extends PureComponent {
     this.props.goToPalette(this.props.id);
   }
   render() {
-    const { paletteName, emoji, colors, handleClick, id } = this.props;
+    const { paletteName, emoji, colors } = this.props;
     const miniColorBoxes = colors.map((color) => (
       <div
         className="mini-color"
