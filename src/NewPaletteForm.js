@@ -11,6 +11,7 @@ import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
 import DraggableColorBox from "./DraggableColorBox";
+import seedColors from "./seedColors";
 
 const drawerWidth = 400;
 
@@ -18,7 +19,6 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
     height: "calc(100vh - 64px)",
-    padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
@@ -47,7 +47,7 @@ function NewPaletteForm(props) {
   const theme = useTheme();
   const { maxColors = 20, palettes } = props;
   const [open, setOpen] = useState(true);
-  const [colors, setNewColor] = useState(props.palettes[0].colors);
+  const [colors, setNewColor] = useState(seedColors[0].colors);
   const [paletteName, setPaletteName] = useState("");
   const [colorName, setColorName] = useState("");
   const paletteFull = colors.length >= maxColors;
