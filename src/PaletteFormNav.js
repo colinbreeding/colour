@@ -2,7 +2,6 @@ import React from "react";
 import PaletteMetaForm from "./PaletteMetaForm";
 import "./styles/PaletteFormNav.css";
 import { styled, useTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -47,7 +46,6 @@ function PaletteFormNav(props) {
   };
   return (
     <div className="root">
-      <CssBaseline />
       <AppBar position="fixed" open={open} color="default">
         <Toolbar>
           <IconButton
