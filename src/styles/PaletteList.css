@@ -1,9 +1,13 @@
 .PaletteList-root {
   background-color: blue;
+  background-image: url(./bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  overflow: scroll;
 }
 
 .PaletteList-container {
@@ -32,6 +36,10 @@
   display: grid;
   grid-template-columns: repeat(3, 30%);
   gap: 3.5rem;
+}
+
+.heading {
+  font-size: 2rem;
 }
 @media (max-width: 1599.98px) {
   .PaletteList-container {
