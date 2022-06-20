@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PaletteMetaForm from "./PaletteMetaForm";
 import "./styles/PaletteFormNav.css";
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -34,7 +34,6 @@ const AppBar = styled(MuiAppBar, {
 }));
 
 function PaletteFormNav(props) {
-  const theme = useTheme();
   const {
     open,
     palettes,

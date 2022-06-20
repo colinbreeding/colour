@@ -5,7 +5,7 @@ import { Picker } from "emoji-mart";
 function EmojiPicker(props) {
   const ref = useRef();
 
-  useEffect(() => {
+  useEffect((props) => {
     new Picker({ ...props, data, ref });
   }, []);
 

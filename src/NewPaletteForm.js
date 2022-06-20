@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles/NewPaletteForm.css";
 import PaletteFormNav from "./PaletteFormNav";
 import ColorPickerForm from "./ColorPickerForm";
-import { styled, useTheme, withTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Typography from "@mui/material/Typography";
@@ -44,7 +44,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 }));
 
 function NewPaletteForm(props) {
-  const theme = useTheme();
   const { maxColors = 20, palettes } = props;
   const [open, setOpen] = useState(true);
   const [colors, setNewColor] = useState(seedColors[0].colors);
@@ -77,13 +76,11 @@ function NewPaletteForm(props) {
   };
   const addRandomColor = () => {
     const allColors = props.palettes.map((p) => p.colors).flat();
-    let rand;
-    let randomColor;
     let isDuplicateColor = true;
     while (isDuplicateColor) {
-      rand = Math.floor(Math.random() * allColors.length);
-      randomColor = allColors[rand];
-      isDuplicateColor = colors.some(
+      let rand = Math.floor(Math.random() * allColors.length);
+      let randomColor = allColors[rand];
+      let isDuplicateColor = colors.some(
         (color) => color.name === randomColor.name
       );
       console.log(randomColor);
