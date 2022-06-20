@@ -76,14 +76,14 @@ function NewPaletteForm(props) {
   };
   const addRandomColor = () => {
     const allColors = props.palettes.map((p) => p.colors).flat();
+    let randomColor;
     let isDuplicateColor = true;
     while (isDuplicateColor) {
       let rand = Math.floor(Math.random() * allColors.length);
       let randomColor = allColors[rand];
-      let isDuplicateColor = colors.some(
+      isDuplicateColor = colors.some(
         (color) => color.name === randomColor.name
       );
-      console.log(randomColor);
     }
     setNewColor([...colors, randomColor]);
   };
