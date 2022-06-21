@@ -7,7 +7,7 @@ function EmojiPicker(props) {
 
   useEffect(() => {
     new Picker({ ...props, data, ref });
-  }, []);
+  });
 
   return <div ref={ref} />;
 }
