@@ -80,7 +80,7 @@ function NewPaletteForm(props) {
     let isDuplicateColor = true;
     while (isDuplicateColor) {
       let rand = Math.floor(Math.random() * allColors.length);
-      let randomColor = allColors[rand];
+      randomColor = allColors[rand];
       isDuplicateColor = colors.some(
         (color) => color.name === randomColor.name
       );
