@@ -40,6 +40,13 @@
 }
 .create-palette {
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #52a0ff;
+  padding: 0.5em 1em 0.5em 1em;
+}
+.create-palette:hover {
+  background-color: #3f78be;
 }
 .heading {
   font-size: 2rem;
