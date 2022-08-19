@@ -1,11 +1,11 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
-import "./styles/DraggableColorBox.css";
+import "../styles/MiniColorBox.css";
 
-export default function DraggableColorBox(props) {
+export default function MiniColorBox(props) {
   const { handleClick, name, color } = props;
   return (
-    <div className="draggableColorBox" style={{ backgroundColor: color }}>
+    <div className="miniColorBox" style={{ backgroundColor: color }}>
       <div className="boxContent">
         <span>{name}</span>
         <DeleteIcon className="deleteIcon" onClick={handleClick} />

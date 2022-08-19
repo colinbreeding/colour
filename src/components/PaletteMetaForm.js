@@ -6,7 +6,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
-import EmojiPicker from "./EmojiPicker";
+import EmojiPicker from "../components/EmojiPicker";
 
 function PaletteMetaForm(props) {
   const { paletteName, setPaletteName, hideForm, handleSubmit } = props;

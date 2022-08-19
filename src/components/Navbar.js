@@ -7,7 +7,7 @@ import Snackbar from "@mui/material/Snackbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import "rc-slider/assets/index.css";
-import "./styles/Navbar.css";
+import "../styles/Navbar.css";
 
 class Navbar extends Component {
   constructor(props) {

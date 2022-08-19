@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import MiniPalette from "./MiniPalette";
+import MiniPalette from "../components/MiniPalette";
 import { Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import "./styles/PaletteList.css";
+import "../styles/PaletteList.css";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import Avatar from "@mui/material/Avatar";

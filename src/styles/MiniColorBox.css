@@ -1,4 +1,4 @@
-.draggableColorBox {
+.miniColorBox {
   width: 20%;
   height: 25%;
   margin: 0 auto;
@@ -31,19 +31,19 @@
 }
 
 @media (max-width: 1199.98px) {
-  .draggableColorBox {
+  .miniColorBox {
     width: 25%;
     height: 20%;
   }
 }
 @media (max-width: 991.98px) {
-  .draggableColorBox {
+  .miniColorBox {
     width: 50%;
     height: 10%;
   }
 }
 @media (max-width: 757.98px) {
-  .draggableColorBox {
+  .miniColorBox {
     width: 100%;
     height: 5%;
   }

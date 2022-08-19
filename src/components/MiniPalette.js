@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import "./styles/MiniPalette.css";
+import "../styles/MiniPalette.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 
 class MiniPalette extends PureComponent {

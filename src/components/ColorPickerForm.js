@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import { ChromePicker } from "react-color";
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
-import "./styles/ColorPickerForm.css";
+import "../styles/ColorPickerForm.css";
 
 function ColorPickerForm(props) {
   const [curColor, setColor] = useState("teal");

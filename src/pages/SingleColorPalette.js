@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ColorBox from "./ColorBox";
-import Navbar from "./Navbar";
-import PaletteFooter from "./PaletteFooter";
+import ColorBox from "../components/ColorBox";
+import Navbar from "../components/Navbar";
+import PaletteFooter from "../components/PaletteFooter";
 import { Link } from "react-router-dom";
 
 class SingleColorPalette extends Component {

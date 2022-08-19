@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./styles/NewPaletteForm.css";
-import PaletteFormNav from "./PaletteFormNav";
-import ColorPickerForm from "./ColorPickerForm";
+import "../styles/NewPaletteForm.css";
+import PaletteFormNav from "../components/PaletteFormNav";
+import ColorPickerForm from "../components/ColorPickerForm";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -10,8 +10,8 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
-import DraggableColorBox from "./DraggableColorBox";
-import seedColors from "./seedColors";
+import MiniColorBox from "../components/MiniColorBox";
+import seedColors from "../helpers/seedColors";
 
 const drawerWidth = 400;
 
@@ -152,7 +152,7 @@ function NewPaletteForm(props) {
       <Main open={open}>
         <DrawerHeader />
         {colors.map((color) => (
-          <DraggableColorBox
+          <MiniColorBox
             color={color.color}
             name={color.name}
             key={color.name}
